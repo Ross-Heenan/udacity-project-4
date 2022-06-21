@@ -7,11 +7,14 @@ WORKDIR /mlapp
 ## Step 2:
 # Copy source code to working directory
 COPY app.py /mlapp
+COPY requirements.txt /mlapp
+COPY model_data/boston_housing_prediction.joblib /mlapp/model_data/
+COPY model_data/housing.csv /mlapp/model_data/
 
 ## Step 3:
 # Install packages from requirements.txt
 # hadolint ignore=DL3013
-RUN pip install --no-cache-dir requirements.txt
+RUN pip install -r requirements.txt --no-cache-dir
 
 ## Step 4:
 # Expose port 80
