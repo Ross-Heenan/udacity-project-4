@@ -47,4 +47,13 @@ source .devops/bin/activate
 * Setup and Configure Docker locally
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
-* Run via kubectl
+* Run via kubectl - kubectl run NAME --image=PATH --port=PORT
+
+### File Summaries
+
+* app.py = python application with trained model
+* dockerfile = contains instructions for docker image 
+* run_docker.sh = script for running a docker container using the image defined in the dockerfile
+* upload_docker.sh = script for uploading the docker image to dockerhub
+* run_kubernetes.sh = script for running a kubernetes cluster with the docukerhub image
+* make_prediction.sh = script for sending JSON input to the app to then retreieve a prediction
